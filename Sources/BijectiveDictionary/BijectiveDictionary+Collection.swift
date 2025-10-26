@@ -76,6 +76,14 @@ extension BijectiveDictionary: Collection {
         assert(_ltr.count == _rtl.count)
         return _ltr.count
     }
+    
+    /// Returns a Boolean value indicating whether the dictionary contains the given left-right pair.
+    /// - Parameter element: The pair to find in the dictionary.
+    /// - Returns: `true` if the pair was found in the dictionary; otherwise, `false`.
+    /// - Complexity: O(1)
+    public func contains(_ element: Element) -> Bool {
+        return _ltr[element.left] == element.right
+    }
 }
 
 extension BijectiveDictionary.Index: Sendable
